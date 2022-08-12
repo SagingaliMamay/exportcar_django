@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Verkopen{% endblock %}
+
+
+{% block content %}
+<div class="container mt-6">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="features">
+                <h1>Auto Gegevens</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.mark }}
+                    {{ form.year }}
+                    {{ form.nrg }}
+                    {{ form.transmission }}
+                    {{ form.km }}
+                    {{ form.price }}
+                    {{ form.description }}
+                    {{ form.email }}
+                    {{ form.name }}
+                    {{ form.tel }}
+                    {{ form.photo }}<br>
+                    <p class="card-text">
+                        {% if form.photo %}
+                        <img src="{{ form.photo.url }}">
+                        {% endif %}
+                    </p>
+                    <button class="btn btn-success" type="submit">Send</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

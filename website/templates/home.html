@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Home {% endblock %}
+{% block content %}
+
+<!-- banner -->
+<section class="banner_main">
+    <div class="container">
+        <div class="row d_flex">
+            <div class="col-md-12">
+                <div class="text-bg">
+                    <h1>Ik koop uw auto snel en hoge prijs</h1>
+                    <span>STEEDS METEEN U GELD CASH OF OVERSCHRIJVING</span>
+
+                    <a href="{% url 'upload' %}">Auto Aanbieden</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- end banner -->
+<!-- car -->
+<div class="car">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>WIJ ZIJN STEEDS OPZOEK NAAR AUTO'S</h2>
+                    <span>WIJ KOPEN ALLE AUTOMERKEN</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 padding_leri">
+                <div class="car_box" >
+                    <figure><img src="{% static 'website/images/car_img1.png' %}" class="img-responsive"  alt="Responsive image"/></figure>
+                    <h3>Personenwagens</h3>
+                </div>
+            </div>
+            <div class="col-md-3 padding_leri">
+                <div class="car_box">
+                    <figure><img src="{% static 'website/images/busik.png' %}" class="img-responsive"  alt="#"/></figure>
+                    <h3>Bedreijfwagens</h3>
+                </div>
+            </div>
+            <div class="col-md-3 padding_leri ">
+                <div class="car_box">
+                    <figure><img src="{% static 'website/images/dépanage.png' %}" class="img-responsive"  alt="#"/></figure>
+                    <h3>Schadewagens</h3>
+                </div>
+            </div>
+            <div class="col-md-3 padding_leri" >
+                <div class="car_box">
+                    <figure ><img src="{% static 'website/images/camion.png' %}" class="img-responsive" alt="Responsive image"/></figure>
+                    <h3>Vraachtwagens</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end car -->
+
+
+
+
+{% endblock %}

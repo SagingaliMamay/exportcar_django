@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Verkopen {% endblock %}
+
+{% block content %}
+<h1>U auto gegevens</h1>
+<form action="{% url 'home' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+
+{% endblock %}
