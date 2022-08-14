@@ -125,10 +125,10 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # send emails settings
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'exportcars111@gmail.com'
-EMAIL_HOST_PASSWORD = 'vcquyptzkhtqsdhw'
+EMAIL_HOST_USER = 'exportcar@outlook.be'
+EMAIL_HOST_PASSWORD = 'tahataha84'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 

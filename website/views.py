@@ -92,7 +92,7 @@ def upload(request):
 
             }
             message = "\n".join(map(str, body.values()))
-            send_mail(subject, message, 'exportcars111@gmail.com', ['exportcars111@gmail.com'])
+            send_mail(subject, message, 'exportcar@outlook.be', ['exportcar@outlook.be'])
             return render(request, 'thanks.html')
 
     form = Car_dataForm()
