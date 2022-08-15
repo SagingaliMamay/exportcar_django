@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+
+
 import django_heroku
 import dj_database_url
 from decouple import config
@@ -72,13 +74,15 @@ WSGI_APPLICATION = 'exportcar.wsgi.application'
     }
 }
 """
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6ldf0u2c19hca',
-        'USER': 'bwqowlkumainau',
-        'PASSWORD': '0619273ed37d4de3a29fcd715a2cf2bd6f0eaf79f294778d65843ca6e2c8d799',
-        'HOST': 'ec2-52-73-155-171.compute-1.amazonaws.com',
+        'NAME': 'del07rsnb4ptoe',
+        'USER': 'nslwrdylhqinpo',
+        'PASSWORD': '2b2a31bc01842244989a07f3c8dc1a47de71ce2e321e537a92d2ca84ffe818ca',
+        'HOST': 'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
