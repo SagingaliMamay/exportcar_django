@@ -8,7 +8,7 @@ class Car_dataForm(ModelForm):
     class Meta:
         model = Car_data
         fields = '__all__'
-
+        images = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
         widgets = {
         "mark": forms.TextInput(attrs={
                 'class': 'form-control',
@@ -52,11 +52,19 @@ class Car_dataForm(ModelForm):
                 "class": 'form-control',
                 "placeholder": 'Telefon'
             }),
+            "photo": forms.FileInput(attrs={
+                "multiple": True,
+                'required': True,
+            }),
+
 
 
     }
 
+from django import forms
 
+class FileFieldForm(forms.Form):
+    file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
 
 
 

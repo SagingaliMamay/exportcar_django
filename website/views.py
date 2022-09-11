@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.mail import send_mail
 from django.core.files.storage import FileSystemStorage
+from pyatspi import image
 
 from .forms import *
 from .models import *
@@ -98,11 +99,30 @@ def upload(request):
     form = Car_dataForm()
 
     data = {
-            'form': form,
-        }
+        'form': form,
+    }
     return render(request, 'upload.html', data)
 
 
+from django.views.generic.edit import FormView
+from .forms import FileFieldForm
+
+class FileFieldView(FormView):
+    form_class = FileFieldForm
+    template_name = 'upload.html'  # Replace with your template.
+    success_url = '...'  # Replace with your URL or reverse().
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        files = request.FILES.getlist('file_field')
+        if form.is_valid():
+            for f in files:
+                f.save()  # Do something with each file.
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 def thanks(request):
     return render(request, 'thanks.html', {})
+

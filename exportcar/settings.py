@@ -19,7 +19,8 @@ SECRET_KEY = 'RANDOM_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ]
+
+ALLOWED_HOSTS = ['www.exportcar.be',]
 
 # Application definition
 
@@ -79,10 +80,10 @@ WSGI_APPLICATION = 'exportcar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'del07rsnb4ptoe',
-        'USER': 'nslwrdylhqinpo',
-        'PASSWORD': '2b2a31bc01842244989a07f3c8dc1a47de71ce2e321e537a92d2ca84ffe818ca',
-        'HOST': 'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd9gpra9saat21q',
+        'USER': 'leoornmfhtplss',
+        'PASSWORD': '4a1f467e92a31c7d3a44a731a26f7337236e8fb7c41149e30e032df0bc686dcb',
+        'HOST': 'ec2-52-208-164-5.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

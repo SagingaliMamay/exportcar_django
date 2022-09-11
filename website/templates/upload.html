@@ -10,6 +10,7 @@
             <div class="features">
                 <h1>Auto Gegevens</h1>
                 <form method="post" enctype="multipart/form-data">
+
                     {% csrf_token %}
                     {{ form.mark }}
                     {{ form.year }}
@@ -27,6 +28,8 @@
                         <img src="{{ form.photo.url }}">
                         {% endif %}
                     </p>
+                    <label>Upload files</label>
+                    <input type="file" name="photos" multiple name="files">
                     <button class="btn btn-success" type="submit">Send</button>
                 </form>
 
