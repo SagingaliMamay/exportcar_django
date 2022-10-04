@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'exportcar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9gpra9saat21q',
-        'USER': 'leoornmfhtplss',
-        'PASSWORD': '4a1f467e92a31c7d3a44a731a26f7337236e8fb7c41149e30e032df0bc686dcb',
-        'HOST': 'ec2-52-208-164-5.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd6qrqv9m9pu3pd',
+        'USER': 'ydtoiaghlecaxo',
+        'PASSWORD': '90964d8d2f993cc9da8da525a28f4d1d9627c0b32a9aae98440719344154f830',
+        'HOST': 'ec2-52-19-188-149.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
