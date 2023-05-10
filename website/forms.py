@@ -67,4 +67,17 @@ class FileFieldForm(forms.Form):
     file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
 
 
+# Multiple files upload
+
+
+
+from django import forms
+from multiupload.fields import MultiFileField
+
+class MyForm(forms.Form):
+    files = MultiFileField()
+
+    
+
+
 

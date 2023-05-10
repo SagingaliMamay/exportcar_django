@@ -126,3 +126,16 @@ class FileFieldView(FormView):
 def thanks(request):
     return render(request, 'thanks.html', {})
 
+
+# Upload multiple files 
+
+# myapp/views.py
+
+from django.shortcuts import render
+from .forms import MyForm
+
+def my_view(request):
+    form = MyForm()
+    return render(request, 'my_template.html', {'form': form})
+
+
