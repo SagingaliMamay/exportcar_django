@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import smtplib
 
 
 
@@ -134,9 +135,21 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'exportcar@outlook.be'
-EMAIL_HOST_PASSWORD = 'tahataha84'
+EMAIL_HOST_PASSWORD = 'Email!1234'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
+
+# checking if SMTP server & port are correct
+
+smtp_server = 'smtp.office365.com'
+smtp_port = 587
+
+# Try to connect to the SMTP server
+try:
+    server = smtplib.SMTP(smtp_server, smtp_port)
+    print('Connected to SMTP server')
+except Exception as e:
+    print('Failed to connect to SMTP server:', e)
 
 # Base url to serve media files
 MEDIA_URL = '/media/'

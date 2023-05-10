@@ -3,6 +3,10 @@ from django .forms import ModelForm, CharField, TextInput, Textarea
 
 from .models import *
 
+#from multiupload.fields import MultiFileInput
+from multiupload.fields import MultiFileField, MultiMediaField, MultiImageField
+
+
 
 class Car_dataForm(ModelForm):
     class Meta:
@@ -72,11 +76,13 @@ class FileFieldForm(forms.Form):
 
 
 from django import forms
-from multiupload.fields import MultiFileField
+# from multiupload.fields import MultiFileField
 
 class MyForm(forms.Form):
-    files = MultiFileField()
-
+#    my_files = forms.FileField(widget=MultiFileInput())
+    
+#class UploadForm(forms.Form):
+    attachments = MultiFileField(min_num=1, max_num=3, max_file_size=1024*1024*5)
     
 
 

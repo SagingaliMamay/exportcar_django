@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.mail import send_mail
 from django.core.files.storage import FileSystemStorage
+# from multiupload.widgets import MultiFileInput
+
 
 
 from .forms import *
@@ -129,13 +131,25 @@ def thanks(request):
 
 # Upload multiple files 
 
-# myapp/views.py
 
 from django.shortcuts import render
 from .forms import MyForm
 
 def my_view(request):
     form = MyForm()
-    return render(request, 'my_template.html', {'form': form})
+    return render(request, 'upload.html', {'form': form})
+
+
+
+def my_view(request):
+    if request.method == 'POST':
+        form = MyForm(request.POST, request.FILES)
+        if form.is_valid():
+            files = request.FILES.getlist('my_files')
+            # Process the uploaded files here
+    else:
+        form = MyForm()
+    return render(request, 'upload.html', {'form': form})
+
 
 
