@@ -2,9 +2,9 @@ import os
 from pathlib import Path
 
 
-import django_heroku
-import dj_database_url
-from decouple import config
+
+# import dj_database_url
+# from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +21,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['www.exportcar.be',]
+ALLOWED_HOSTS = ['www.tkautos.be','127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'exportcar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6qrqv9m9pu3pd',
-        'USER': 'ydtoiaghlecaxo',
-        'PASSWORD': '90964d8d2f993cc9da8da525a28f4d1d9627c0b32a9aae98440719344154f830',
-        'HOST': 'ec2-52-19-188-149.eu-west-1.compute.amazonaws.com',
+        'NAME': 'tkautos',
+        'USER': 'postgres',
+        'PASSWORD': 'Al@n2018',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -149,4 +149,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
