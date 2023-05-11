@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <div class="features">
                 <h1>Auto Gegevens</h1>
-                <form method="post" enctype="multipart/form-data">
+             <!--   <form method="post" enctype="multipart/form-data">
 
                     {% csrf_token %}
                     {{ form.mark }}
@@ -32,13 +32,13 @@
                     <input type="file" name="photos" multiple name="files">
                     <button class="btn btn-success" type="submit">Send</button>
                 </form>
-
+            -->
                 <!-- Multiple files upload rendering -->
 
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Send</button>
                 </form>
 
 

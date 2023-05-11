@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # send emails settings
 
-EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST = ' smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'exportcar@outlook.be'
 EMAIL_HOST_PASSWORD = 'Email!1234'
@@ -142,7 +142,7 @@ EMAIL_USE_TLS = True
 # checking if SMTP server & port are correct
 
 smtp_server = 'smtp.office365.com'
-smtp_port = 587
+smtp_port = 465
 
 # Try to connect to the SMTP server
 try:
