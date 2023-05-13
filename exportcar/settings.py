@@ -22,7 +22,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['www.tkautos.be','127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['www.tkautos.be','localhost','127.0.0.1']
 
 # Application definition
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+
 ]
 
 MIDDLEWARE = [
@@ -130,19 +131,32 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
 # send emails settings
 
-EMAIL_HOST = ' smtp.office365.com'
+'''
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'sagingali.mamayev@gmail.com'
+EMAIL_HOST_PASSWORD = 'Al@n2018'
+'''
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_PORT = 587
+#EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'exportcar@outlook.be'
-EMAIL_HOST_PASSWORD = 'Email!1234'
+EMAIL_HOST_PASSWORD = 'Email1234'
+
 EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
+#EMAIL_USE_SSL = False
 
 # checking if SMTP server & port are correct
 
-smtp_server = 'smtp.office365.com'
-smtp_port = 465
+smtp_server = EMAIL_HOST
+smtp_port = EMAIL_PORT
 
 # Try to connect to the SMTP server
 try:

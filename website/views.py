@@ -1,7 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.core.mail import send_mail
 from django.core.files.storage import FileSystemStorage
-# from multiupload.widgets import MultiFileInput
 
 
 
@@ -36,7 +35,7 @@ def home(request):
             'Taha, message from' + voornaam,  # subject
             car_data,  # message
             email,  # from email
-            ['exportscars111@gmail.com']  # to email
+            ['exportcar@outlook.be']  # to email
         )
 
         return render(request, 'home.html', {'merk': merk, 'year': year,
@@ -133,23 +132,22 @@ def thanks(request):
 
 
 from django.shortcuts import render
-from .forms import MyForm
-
-def my_view(request):
-    form = MyForm()
-    return render(request, 'upload.html', {'form': form})
 
 
 
-def my_view(request):
-    if request.method == 'POST':
-        form = MyForm(request.POST, request.FILES)
-        if form.is_valid():
-            files = request.FILES.getlist('my_files')
-            # Process the uploaded files here
-    else:
-        form = MyForm()
-    return render(request, 'upload.html', {'form': form})
 
 
 
+from django.views.generic.edit import FormView
+from .forms import UploadForm
+from .models import Attachment
+
+class UploadView(FormView):
+    template_name = 'form.html'
+    form_class = UploadForm
+    success_url = '/done/'
+
+    def form_valid(self, form):
+        for each in form.cleaned_data['attachments']:
+            Attachment.objects.create(file=each)
+        return super(UploadView, self).form_valid(form)
